@@ -43,7 +43,7 @@ function App() {
       </nav>
 
       <main className="lg:pl-32 grid grid-cols-1 lg:grid-cols-8 pb-20">
-        <div className="lg:col-span-6 md:p-8 p-4">
+        <div className="lg:col-span-6 md:p-8 p-4 lg:mr-24">
           {/* header */}
           <header className="">
             {/* title and search*/}
