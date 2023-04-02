@@ -316,7 +316,7 @@ function App() {
                 <span>$201.03</span>
               </div>
               <div className="">
-                <button className="bg-[#ec7c6a] w-full py-2 px-4 rounded-lg">
+                <button className="bg-[#ec7c6a] w-full py-2 px-4 rounded-lg text-white font-semibold">
                   Continue to Payment
                 </button>
               </div>
