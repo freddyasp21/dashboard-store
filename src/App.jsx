@@ -19,9 +19,9 @@ function App() {
     setShowMenu(!showMenu);
   };
 
-  const toggleOrder = () =>{
+  const toggleOrder = () => {
     setShowOrder(!showOrder);
-  }
+  };
 
   return (
     <div className="bg-[#262837] w-full min-h-screen">
@@ -29,7 +29,7 @@ function App() {
       {/* Menu movil */}
       <nav className="bg-[#1F1F2B] lg:hidden fixed w-full bottom-0 left-0 text-3xl text-gray-400 py-2 px-8 flex items-center justify-between rounded-tl-xl rounded-tr-xl">
         <button className="text-white p-2">
-          <RiUser3Line/>
+          <RiUser3Line />
         </button>
         <button className="text-white p-2">
           <RiAddFill />
@@ -42,8 +42,8 @@ function App() {
         </button>
       </nav>
 
-      <main className="lg:pl-32 grid grid-cols-1 lg:grid-cols-8 p-4 pb-20">
-        <div className="lg:col-span-6 md:p-8">
+      <main className="lg:pl-32 grid grid-cols-1 lg:grid-cols-8 pb-20">
+        <div className="lg:col-span-6 md:p-8 p-4">
           {/* header */}
           <header className="">
             {/* title and search*/}
@@ -157,10 +157,17 @@ function App() {
             </div>
           </div>
         </div>
-        <div className={`lg:col-span-2 fixed lg:static bg-[#1f1d2b] top-0 w-full h-full ${showOrder ? "right-0" : "-right-full"}`}>
+        <div
+          className={`lg:col-span-2 fixed lg:static lg:min-h-screen bg-[#1f1d2b] top-0 w-full h-full ${
+            showOrder ? "right-0" : "-right-full"
+          }`}
+        >
           {/* order */}
-          <div className="relative pt-16 text-gray-300 p-8 h-full">
-            <RiCloseFill onClick={toggleOrder} className="absolute left-4 top-4 p-3 box-content text-gray-300 bg-[#262837] rounded-full text-xl transition-all" />
+          <div className="relative pt-16 text-gray-300 p-8 h-full lg:pt-8">
+            <RiCloseFill
+              onClick={toggleOrder}
+              className="absolute left-4 top-4 p-3 box-content text-gray-300 bg-[#262837] rounded-full text-xl transition-all lg:hidden"
+            />
             <h1 className="text-xl my-4">Order #145566</h1>
             {/* navigation */}
             <div className="flex items-center gap-4 flex-wrap mb-8">
@@ -180,131 +187,172 @@ function App() {
               <h5 className="ol-span-2 font-bold">Qty</h5>
               <h5 className="ol-span-2 font-bold">Price</h5>
             </div>
-            <div className="h-[400px] overflow-scroll">
-                {/* Product */}
-            <div className="bg-[#262837] p-4 rounded-xl mb-4">
-              <div className="grid grid-cols-6 mb-4">
-                {/* Product description */}
-                <div className="flex items-center gap-2 col-span-4">
-                  <img
-                    src="/src/assets/img/comida.png"
-                    alt=""
-                    className="w-10 h-10 object-cover"
-                  />
-                  <div className="">
-                    <h5 className="text-sm font-bold">Speacy seasoned</h5>
-                    <p className="text-xs text-gray-500">$2.29</p>
+            <div className="h-[400px] md:h-[700px] lg:h-[540px] overflow-scroll">
+              {/* Product */}
+              <div className="bg-[#262837] p-4 rounded-xl mb-4">
+                <div className="grid grid-cols-6 mb-4">
+                  {/* Product description */}
+                  <div className="flex items-center gap-2 col-span-4">
+                    <img
+                      src="/src/assets/img/comida.png"
+                      alt=""
+                      className="w-10 h-10 object-cover"
+                    />
+                    <div className="">
+                      <h5 className="text-sm font-bold">Speacy seasoned</h5>
+                      <p className="text-xs text-gray-500">$2.29</p>
+                    </div>
+                  </div>
+                  {/* Qty */}
+                  <div className="flex items-center justify-center">
+                    <span className="">2</span>
+                  </div>
+                  {/* Price */}
+                  <div className="flex items-center justify-center">
+                    <span className="">$4.58</span>
                   </div>
                 </div>
-                {/* Qty */}
-                <div className="flex items-center justify-center">
-                  <span className="">2</span>
-                </div>
-                {/* Price */}
-                <div className="flex items-center justify-center">
-                  <span className="">$4.58</span>
+                {/* note */}
+                <div className="grid grid-cols-5 items-center gap-4">
+                  <form className="col-span-4">
+                    <input
+                      type="text"
+                      className="bg-[#1F1F2B] py-2 px-4 rounded-lg outline-none"
+                      placeholder="Order here..."
+                    />
+                  </form>
+                  <div className="col-span-1 text-center">
+                    <button className="border border-red-500 p-2 rounded-lg text-red-500">
+                      <RiDeleteBin6Line className="text-xl" />
+                    </button>
+                  </div>
                 </div>
               </div>
-              {/* note */}
-              <div className="grid grid-cols-5 items-center gap-4">
-                <form className="col-span-4">
-                  <input
-                    type="text"
-                    className="bg-[#1F1F2B] py-2 px-4 rounded-lg outline-none"
-                    placeholder="Order here..."
-                  />
-                </form>
-                <div className="col-span-1 text-center">
-                  <button className="border border-red-500 p-2 rounded-lg text-red-500">
-                    <RiDeleteBin6Line className="text-xl" />
-                  </button>
+
+              {/* Product */}
+              <div className="bg-[#262837] p-4 rounded-xl mb-4">
+                <div className="grid grid-cols-6 mb-4">
+                  {/* Product description */}
+                  <div className="flex items-center gap-2 col-span-4">
+                    <img
+                      src="/src/assets/img/comida.png"
+                      alt=""
+                      className="w-10 h-10 object-cover"
+                    />
+                    <div className="">
+                      <h5 className="text-sm font-bold">Speacy seasoned</h5>
+                      <p className="text-xs text-gray-500">$2.29</p>
+                    </div>
+                  </div>
+                  {/* Qty */}
+                  <div className="flex items-center justify-center">
+                    <span className="">2</span>
+                  </div>
+                  {/* Price */}
+                  <div className="flex items-center justify-center">
+                    <span className="">$4.58</span>
+                  </div>
+                </div>
+                {/* note */}
+                <div className="grid grid-cols-5 items-center gap-4">
+                  <form className="col-span-4">
+                    <input
+                      type="text"
+                      className="bg-[#1F1F2B] py-2 px-4 rounded-lg outline-none"
+                      placeholder="Order here..."
+                    />
+                  </form>
+                  <div className="col-span-1 text-center">
+                    <button className="border border-red-500 p-2 rounded-lg text-red-500">
+                      <RiDeleteBin6Line className="text-xl" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Product */}
+              <div className="bg-[#262837] p-4 rounded-xl mb-4">
+                <div className="grid grid-cols-6 mb-4">
+                  {/* Product description */}
+                  <div className="flex items-center gap-2 col-span-4">
+                    <img
+                      src="/src/assets/img/comida.png"
+                      alt=""
+                      className="w-10 h-10 object-cover"
+                    />
+                    <div className="">
+                      <h5 className="text-sm font-bold">Speacy seasoned</h5>
+                      <p className="text-xs text-gray-500">$2.29</p>
+                    </div>
+                  </div>
+                  {/* Qty */}
+                  <div className="flex items-center justify-center">
+                    <span className="">2</span>
+                  </div>
+                  {/* Price */}
+                  <div className="flex items-center justify-center">
+                    <span className="">$4.58</span>
+                  </div>
+                </div>
+                {/* note */}
+                <div className="grid grid-cols-5 items-center gap-4">
+                  <form className="col-span-4">
+                    <input
+                      type="text"
+                      className="bg-[#1F1F2B] py-2 px-4 rounded-lg outline-none"
+                      placeholder="Order here..."
+                    />
+                  </form>
+                  <div className="col-span-1 text-center">
+                    <button className="border border-red-500 p-2 rounded-lg text-red-500">
+                      <RiDeleteBin6Line className="text-xl" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Product */}
+              <div className="bg-[#262837] p-4 rounded-xl mb-4">
+                <div className="grid grid-cols-6 mb-4">
+                  {/* Product description */}
+                  <div className="flex items-center gap-2 col-span-4">
+                    <img
+                      src="/src/assets/img/comida.png"
+                      alt=""
+                      className="w-10 h-10 object-cover"
+                    />
+                    <div className="">
+                      <h5 className="text-sm font-bold">Speacy seasoned</h5>
+                      <p className="text-xs text-gray-500">$2.29</p>
+                    </div>
+                  </div>
+                  {/* Qty */}
+                  <div className="flex items-center justify-center">
+                    <span className="">2</span>
+                  </div>
+                  {/* Price */}
+                  <div className="flex items-center justify-center">
+                    <span className="">$4.58</span>
+                  </div>
+                </div>
+                {/* note */}
+                <div className="grid grid-cols-5 items-center gap-4">
+                  <form className="col-span-4">
+                    <input
+                      type="text"
+                      className="bg-[#1F1F2B] py-2 px-4 rounded-lg outline-none"
+                      placeholder="Order here..."
+                    />
+                  </form>
+                  <div className="col-span-1 text-center">
+                    <button className="border border-red-500 p-2 rounded-lg text-red-500">
+                      <RiDeleteBin6Line className="text-xl" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Product */}
-            <div className="bg-[#262837] p-4 rounded-xl mb-4">
-              <div className="grid grid-cols-6 mb-4">
-                {/* Product description */}
-                <div className="flex items-center gap-2 col-span-4">
-                  <img
-                    src="/src/assets/img/comida.png"
-                    alt=""
-                    className="w-10 h-10 object-cover"
-                  />
-                  <div className="">
-                    <h5 className="text-sm font-bold">Speacy seasoned</h5>
-                    <p className="text-xs text-gray-500">$2.29</p>
-                  </div>
-                </div>
-                {/* Qty */}
-                <div className="flex items-center justify-center">
-                  <span className="">2</span>
-                </div>
-                {/* Price */}
-                <div className="flex items-center justify-center">
-                  <span className="">$4.58</span>
-                </div>
-              </div>
-              {/* note */}
-              <div className="grid grid-cols-5 items-center gap-4">
-                <form className="col-span-4">
-                  <input
-                    type="text"
-                    className="bg-[#1F1F2B] py-2 px-4 rounded-lg outline-none"
-                    placeholder="Order here..."
-                  />
-                </form>
-                <div className="col-span-1 text-center">
-                  <button className="border border-red-500 p-2 rounded-lg text-red-500">
-                    <RiDeleteBin6Line className="text-xl" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Product */}
-            <div className="bg-[#262837] p-4 rounded-xl mb-4">
-              <div className="grid grid-cols-6 mb-4">
-                {/* Product description */}
-                <div className="flex items-center gap-2 col-span-4">
-                  <img
-                    src="/src/assets/img/comida.png"
-                    alt=""
-                    className="w-10 h-10 object-cover"
-                  />
-                  <div className="">
-                    <h5 className="text-sm font-bold">Speacy seasoned</h5>
-                    <p className="text-xs text-gray-500">$2.29</p>
-                  </div>
-                </div>
-                {/* Qty */}
-                <div className="flex items-center justify-center">
-                  <span className="">2</span>
-                </div>
-                {/* Price */}
-                <div className="flex items-center justify-center">
-                  <span className="">$4.58</span>
-                </div>
-              </div>
-              {/* note */}
-              <div className="grid grid-cols-5 items-center gap-4">
-                <form className="col-span-4">
-                  <input
-                    type="text"
-                    className="bg-[#1F1F2B] py-2 px-4 rounded-lg outline-none"
-                    placeholder="Order here..."
-                  />
-                </form>
-                <div className="col-span-1 text-center">
-                  <button className="border border-red-500 p-2 rounded-lg text-red-500">
-                    <RiDeleteBin6Line className="text-xl" />
-                  </button>
-                </div>
-              </div>
-            </div>
-            </div>
-            
             {/* submit payment */}
             <div className="bg-[#262837] absolute bottom-0 left-0 w-full p-4">
               <div className="flex items-center justify-between mb-2">
