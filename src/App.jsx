@@ -12,7 +12,7 @@ import {
 import Sidebar from "./components/shared/Sidebar";
 
 function App() {
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(true);
   const [showOrder, setShowOrder] = useState(false);
 
   const toggleMenu = () => {
@@ -158,7 +158,7 @@ function App() {
           </div>
         </div>
         <div
-          className={`lg:col-span-2 fixed lg:static lg:min-h-screen bg-[#1f1d2b] top-0 w-full h-full ${
+          className={`fixed bg-[#1f1d2b] top-0 w-full lg:right-0 lg:w-96 h-full ${
             showOrder ? "right-0" : "-right-full"
           }`}
         >
@@ -187,7 +187,7 @@ function App() {
               <h5 className="ol-span-2 font-bold">Qty</h5>
               <h5 className="ol-span-2 font-bold">Price</h5>
             </div>
-            <div className="h-[400px] md:h-[700px] lg:h-[540px] overflow-scroll">
+            <div className="h-[400px] md:h-[700px] lg:h-[540px] overflow-y-scroll">
               {/* Product */}
               <div className="bg-[#262837] p-4 rounded-xl mb-4">
                 <div className="grid grid-cols-6 mb-4">

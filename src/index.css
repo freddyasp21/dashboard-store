@@ -5,3 +5,7 @@
 body{
     background-color: #1F1F2B;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
